@@ -1,0 +1,17 @@
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\bin\Debug\net6.0-windows\FO PROJECT 1.exe
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\bin\Debug\net6.0-windows\FO PROJECT 1.deps.json
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\bin\Debug\net6.0-windows\FO PROJECT 1.runtimeconfig.json
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\bin\Debug\net6.0-windows\FO PROJECT 1.dll
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\bin\Debug\net6.0-windows\FO PROJECT 1.pdb
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.csproj.AssemblyReference.cache
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO_PROJECT_1.Form1.resources
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.csproj.GenerateResource.cache
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.AssemblyInfoInputs.cache
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.AssemblyInfo.cs
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.csproj.CoreCompileInputs.cache
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.dll
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\refint\FO PROJECT 1.dll
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.pdb
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\FO PROJECT 1.genruntimeconfig.cache
+C:\Users\R\OneDrive\coding\FO PROJECT 1\FO PROJECT 1\obj\Debug\net6.0-windows\ref\FO PROJECT 1.dll
