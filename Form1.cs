@@ -6,6 +6,7 @@ namespace FO_PROJECT_1
 {
     public partial class Form1 : Form
     {
+        private FlowLayoutPanel photoFlowLayout;
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +40,19 @@ namespace FO_PROJECT_1
                 {
                     using (ZipArchive archive = new ZipArchive(file, ZipArchiveMode.Read))
                     {
+                        if (photoFlowLayout == null)
+                        {
+                            photoFlowLayout = new FlowLayoutPanel();
+                            photoFlowLayout.AutoScroll = true;
+                            photoFlowLayout.Location = new Point(150, 100);
+                            photoFlowLayout.Size = new Size(500, 300);
+                            Controls.Add(photoFlowLayout); // Add flow layout panel to form
+                        }
+                        else
+                        {
+                            photoFlowLayout.Controls.Clear(); // Clear existing photos
+                        }
+
                         foreach (ZipArchiveEntry entry in archive.Entries)
                         {
                             if (!entry.FullName.EndsWith("/")) // Directory entries end with "/"
@@ -52,10 +66,9 @@ namespace FO_PROJECT_1
                                         PictureBox pictureBox = new PictureBox();
                                         pictureBox.Image = img;
                                         pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-                                        pictureBox.Location = new Point(currentX, 30); // Adjust position as needed
-                                        Controls.Add(pictureBox);
 
-                                        currentX += pictureBox.Width + 10;
+                                        // Add picture box to the flow layout panel
+                                        photoFlowLayout.Controls.Add(pictureBox);
                                     }
                                 }
                             }
@@ -148,14 +161,8 @@ namespace FO_PROJECT_1
                                         }
                                         if (selectedDate != creationDate.Date)
                                         {
-                                            foreach (Control control in Controls)
-                                            {
-                                                if (control is PictureBox)
-                                                {
-                                                    Controls.Remove(control);
-                                                    control.Dispose();
-                                                }
-                                            }
+                                        
+                                            photoFlowLayout.Visible = false;
                                             MessageBox.Show("No pictures for this day");
                                             return;
 
