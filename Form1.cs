@@ -24,6 +24,8 @@ namespace FO_PROJECT_1
         StreamReader reader;
         StreamWriter writer;
         string filename;
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -46,7 +48,7 @@ namespace FO_PROJECT_1
                                     using (Stream zipStream = entry.Open())
                                     {
                                         Image img = Image.FromStream(zipStream);
-                                        // DateTime creationDate = GetCreationDate(entry.FullName);
+
                                         PictureBox pictureBox = new PictureBox();
                                         pictureBox.Image = img;
                                         pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -67,16 +69,17 @@ namespace FO_PROJECT_1
             }
         }
 
+        //
+
         private bool IsImageFile(string fileName)
         {
             string ext = Path.GetExtension(fileName).ToLower();
-            return ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif" || ext == ".bmp";
+            return ext == ".jpg" || ext == ".jpeg" || ext == ".png";
         }
-        private DateTime GetCreationDate(string filename)
-        {
-            string dateString = Path.GetFileNameWithoutExtension(filename).Split('-')[1];
-            return DateTime.ParseExact(dateString, "dd-MM-yyyy",CultureInfo.CurrentCulture);
-        }
+
+        //
+
+        //
         private void button2_Click(object sender, EventArgs e)
         {
             button3.Visible = true;
@@ -95,6 +98,9 @@ namespace FO_PROJECT_1
             }
         }
 
+
+
+        //
         private void button3_Click(object sender, EventArgs e)
         {  // Clear existing pictures
             foreach (Control control in Controls)
@@ -140,13 +146,56 @@ namespace FO_PROJECT_1
 
                                             currentX += pictureBox.Width + 10;
                                         }
+                                        if (selectedDate != creationDate.Date)
+                                        {
+                                            foreach (Control control in Controls)
+                                            {
+                                                if (control is PictureBox)
+                                                {
+                                                    Controls.Remove(control);
+                                                    control.Dispose();
+                                                }
+                                            }
+                                            MessageBox.Show("No pictures for this day");
+                                            return;
+
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+
                 }
             }
+        }
+
+        private DateTime GetCreationDate(string filename)
+        {
+
+            try
+            {
+                // Extract the date portion after the first hyphen
+                string dateString = Path.GetFileNameWithoutExtension(filename)?.Split('-')[1]?.Trim();
+
+                if (!string.IsNullOrEmpty(dateString))
+                {
+                    // Parse the date using the specified format
+                    if (DateTime.TryParseExact(dateString, "dd-MM-yyyy", CultureInfo.CurrentCulture,
+                        DateTimeStyles.None, out DateTime dateTaken))
+                    {
+                        return dateTaken;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions (e.g., invalid format, null filename, etc.)
+                Console.WriteLine($"Error extracting creation date: {ex.Message}");
+            }
+
+            // Return a default value (e.g., DateTime.MinValue) if extraction fails
+            return DateTime.MinValue;
         }
     }
 }
